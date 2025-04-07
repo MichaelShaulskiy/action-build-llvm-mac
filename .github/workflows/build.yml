@@ -42,7 +42,7 @@ jobs:
         make -j$(nproc)
 
     - name: Archive build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: llvm-19-macos-build
         path: build
