@@ -21,14 +21,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y cmake ninja-build clang llvm
 
-    - name: Install osxcross
-      run: |
-        git clone https://github.com/tpoechtrager/osxcross.git
-        cd osxcross
-        wget https://github.com/phracker/MacOSX-SDKs/releases/download/11.3/MacOSX11.3.sdk.tar.xz
-        mv MacOSX11.3.sdk.tar.xz tarballs/
-        UNATTENDED=yes OSX_VERSION_MIN=10.12 ./build.sh
-
     - name: Set up osxcross
       run: |
         echo "$(pwd)/osxcross/target/bin" >> $GITHUB_PATH
