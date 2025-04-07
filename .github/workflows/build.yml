@@ -31,8 +31,8 @@ jobs:
 
     - name: Set up osxcross
       run: |
-        echo "::add-path::$(pwd)/osxcross/target/bin"
-        echo "::set-env name=OSXCROSS_MP_INC::$(pwd)/osxcross/target/macports/pkgs/opt/local/include"
+        echo "$(pwd)/osxcross/target/bin" >> $GITHUB_PATH
+        echo "OSXCROSS_MP_INC=$(pwd)/osxcross/target/macports/pkgs/opt/local/include" >> $GITHUB_ENV
 
     - name: Cross-compile LLVM 19 for macOS
       run: |
