@@ -38,7 +38,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake -DCMAKE_TOOLCHAIN_FILE=$(pwd)/../osxcross/target/macports/pkgs/opt/local/lib/cmake/llvm/LLVMConfig.cmake -DLLVM_TARGETS_TO_BUILD=X86 -DCMAKE_BUILD_TYPE=Release /home/docker/llvm
+        cmake -DCMAKE_TOOLCHAIN_FILE=$(pwd)/../osxcross/target/macports/pkgs/opt/local/lib/cmake/llvm/LLVMConfig.cmake -DLLVM_TARGETS_TO_BUILD=X86 -DCMAKE_BUILD_TYPE=Release /home/runner/llvm
         make -j$(nproc)
 
     - name: Archive build artifacts
